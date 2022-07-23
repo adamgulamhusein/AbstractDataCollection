@@ -1,0 +1,22 @@
+Filename: /Users/adamgulamhusein/Desktop/bci-essentials-python-abstract/examples/switch_offline_test.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    17    404.6 MiB    404.6 MiB           1   @profile(stream=fp)
+    18                                         def main():
+    19                                             # Initialize data object
+    20    404.6 MiB      0.0 MiB           1       test_switch = EEG_data()
+    21                                         
+    22                                             # Select a classifier
+    23    404.6 MiB      0.0 MiB           1       test_switch.classifier = switch_classifier()
+    24    404.6 MiB      0.0 MiB           1       test_switch.classifier.set_switch_classifier_settings(n_splits=2, rebuild=True, random_seed=35)
+    25                                         
+    26                                             # Select a file to run, use a file that you have locally 
+    27    412.4 MiB      7.8 MiB           1       test_switch.load_offline_eeg_data(filename  = "examples/data/switch_example.xdf") 
+    28                                         
+    29                                             # Run it
+    30    436.4 MiB     24.0 MiB           1       test_switch.main(online=False, training=True)
+    31                                         
+    32    436.4 MiB      0.0 MiB           1       print(f"Time consumed: {time.time() - start}")
+
+Time consumed = 3.4718399047851562 seconds
