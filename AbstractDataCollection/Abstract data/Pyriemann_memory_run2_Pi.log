@@ -1,0 +1,22 @@
+Filename: /home/raspberry/AbstractDataCollection/AbstractDataCollection-main/AbstractDataCollection/examples/switch_offline_test.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    18    521.6 MiB    521.6 MiB           1   @profile(stream=fp)
+    19                                         def main():
+    20                                             # Initialize data object
+    21    521.6 MiB      0.0 MiB           1       test_switch = EEG_data()
+    22                                         
+    23                                             # Select a classifier
+    24    521.6 MiB      0.0 MiB           1       test_switch.classifier = switch_classifier()
+    25    521.6 MiB      0.0 MiB           1       test_switch.classifier.set_switch_classifier_settings(n_splits=2, rebuild=True, random_seed=35)
+    26                                         
+    27                                             # Select a file to run, use a file that you have locally 
+    28    529.3 MiB      7.7 MiB           1       test_switch.load_offline_eeg_data(filename  = "examples/data/switch_example.xdf") 
+    29                                         
+    30                                             # Run it
+    31    541.4 MiB     12.1 MiB           1       test_switch.main(online=False, training=True)
+    32                                         
+    33    541.4 MiB      0.0 MiB           1       print(f"Time consumed: {time.time() - start}")
+
+
